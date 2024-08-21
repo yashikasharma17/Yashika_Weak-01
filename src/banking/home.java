@@ -8,7 +8,7 @@ import java.awt.event.ActionListener;
 public class home extends JFrame implements ActionListener {
     String pin;
     String Form_No;
-    JButton b1,b2,b3,b4,b5,b6,b7;
+    JButton b1,b2,b3,b4,b5,b6,b7,b8;
     home(String pin,String Form_No){
         this.Form_No=Form_No;
         this.pin=pin;
@@ -59,11 +59,19 @@ public class home extends JFrame implements ActionListener {
          b6.addActionListener(this);
         add(b6);
 
+        b8=new JButton("CHANGE PIN ");
+        b8.setFont(new Font("Raleway",Font.BOLD,25));
+        b8.setBackground(Color.yellow);
+        b8.setForeground(Color.BLACK);
+        b8.setBounds(100,350,300,50);
+        b8.addActionListener(this);
+        add(b8);
+
         b7=new JButton("EXIT");
         b7.setFont(new Font("Raleway",Font.BOLD,25));
         b7.setBackground(Color.yellow);
         b7.setForeground(Color.BLACK);
-        b7.setBounds(100,350,300,50);
+        b7.setBounds(100,450,300,50);
          b7.addActionListener(this);
         add(b7);
 
@@ -94,6 +102,9 @@ public class home extends JFrame implements ActionListener {
             }
             else if(e.getSource()==b4){
                 new statement(pin);
+            }
+            else if (e.getSource()==b8){
+new pin(pin,Form_No);
             }
         }
         catch(Exception E){
